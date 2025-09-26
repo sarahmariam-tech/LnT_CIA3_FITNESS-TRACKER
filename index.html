@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Fitness Tracker Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="container my-4">
+    <h1 class="text-center mb-4 text-primary">🏋️ Fitness Tracker Dashboard 🏋️</h1>
+    <div class="card mb-4 shadow">
+        <div class="card-header bg-primary text-white">
+            <h5>📝 Add New Workout</h5>
+        </div>
+        <div class="card-body">
+            <form id="workoutForm">
+                <div class="form-row">
+                    <div class="col-md-3 mb-2">
+                        <input type="text" id="type" class="form-control" placeholder="Workout Type" required />
+                    </div>
+                    <div class="col-md-2 mb-2">
+                        <input type="number" id="duration" class="form-control" placeholder="Duration (min)" required />
+                    </div>
+                    <div class="col-md-2 mb-2">
+                        <input type="number" id="calories" class="form-control" placeholder="Calories Burned" required />
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        <input type="date" id="date" class="form-control" required />
+                    </div>
+                    <div class="col-md-2 mb-2">
+                        <button type="submit" class="btn btn-success btn-block">Add Workout</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="card mb-4 shadow">
+        <div class="card-header bg-success text-white">
+            <h5>🎯 Set Your Goals</h5>
+        </div>
+        <div class="card-body">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input type="number" id="goal" class="form-control" placeholder="Weekly calories goal" />
+                        <div class="input-group-append">
+                            <button id="setGoal" class="btn btn-warning">Set Goal</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div id="goalStatus" class="alert alert-info mb-0 d-none"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4 shadow">
+        <div class="card-header bg-info text-white">
+            <h5>📊 Your Progress Chart</h5>
+        </div>
+        <div class="card-body">
+            <canvas id="progressChart"></canvas>
+        </div>
+    </div>
+
+    <div class="card shadow">
+        <div class="card-header bg-secondary text-white">
+            <h5>📋 Workout History</h5>
+        </div>
+        <div class="card-body table-responsive">
+            <table class="table table-striped table-hover" id="workoutTable">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>📅 Date</th>
+                        <th>🏃 Type</th>
+                        <th>⏱️ Duration (min)</th>
+                        <th>🔥 Calories</th>
+                        <th>🗑️ Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
